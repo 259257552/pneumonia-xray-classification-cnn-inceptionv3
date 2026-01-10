@@ -70,3 +70,4 @@ pred_labels = (preds > 0.5).astype(int)
 
 print(confusion_matrix(test_data.classes, pred_labels))
 print(classification_report(test_data.classes, pred_labels))
+model.save('cnn_model.h5')
