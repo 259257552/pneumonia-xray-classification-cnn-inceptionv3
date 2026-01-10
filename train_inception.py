@@ -58,3 +58,4 @@ model.fit(
     epochs=EPOCHS,
     validation_data=val_data
 )
+model.save('cnn_model.h5')
