@@ -8,7 +8,6 @@ import random
 import itertools
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, precision_score, recall_score, f1_score, roc_curve, auc, precision_recall_curve, average_precision_score
 
-
 def plot_images(images, labels, class_indices, num_images=5):
     
     color = ['dodgerblue', 'crimson']
@@ -142,24 +141,7 @@ def plot_precision_recall_curve(y_true, y_probs):
     plt.grid(alpha=0.3)
     plt.show()
 
-def plot_roc_curve(y_true, y_probs):
-    
-    fpr, tpr, roc_thresholds = roc_curve(y_true, y_probs)
-    roc_auc = auc(fpr, tpr)
 
-    plt.figure()
-    plt.plot(fpr, tpr, label=f'ROC curve (area = {roc_auc:.3f})')
-    plt.plot([0, 1], [0, 1], 'k--')
-    plt.xlabel('False positive rate')
-    plt.ylabel('True positive rate')
-    plt.title('ROC curve')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.0])
-    plt.grid(alpha=0.3)
-    plt.legend(loc="lower right")
-    plt.show()
-    
-    
 def evaluate_classification_performance(predictions, test_generator):
 
     # Generate predictions
@@ -199,20 +181,4 @@ def evaluate_classification_performance(predictions, test_generator):
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.0])
     plt.grid(alpha=0.3)
-    plt.show()
-    
-    # ROC curve
-    fpr, tpr, roc_thresholds = roc_curve(y_true, y_probs)
-    roc_auc = auc(fpr, tpr)
-    
-    plt.figure()
-    plt.plot(fpr, tpr, label=f'ROC curve (area = {roc_auc:.3f})')
-    plt.plot([0, 1], [0, 1], 'k--')
-    plt.xlabel('False positive rate')
-    plt.ylabel('True positive rate')
-    plt.title('ROC curve')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.0])
-    plt.grid(alpha=0.3)
-    plt.legend(loc="lower right")
     plt.show()
