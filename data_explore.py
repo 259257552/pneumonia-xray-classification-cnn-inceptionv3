@@ -153,6 +153,3 @@ for ax, sample in zip(axes.ravel()[5:], pneumonia_samples['path']):
     ax.imshow(img, cmap='gray')
     ax.set_title('PNEUMONIA', color='crimson')
     ax.axis('off')
-
-plt.suptitle('X-Ray images of Chest')
-plt.show()
