@@ -215,4 +215,3 @@ cm = confusion_matrix(y_true, y_pred)
 classes = list(test_generator.class_indices.keys())
 plot_confusion_matrix(cm, classes)
 
-plot_roc_curve(y_true, y_probs)
