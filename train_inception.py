@@ -69,9 +69,9 @@ base_model = InceptionV3(
     weights='imagenet',
     include_top=False,
     input_shape=(224,224,3)
-)
+))
 
-base_model.trainable = False   # 不微调
+base_model.trainable = False
 
 model = models.Sequential([
     base_model,
@@ -102,7 +102,7 @@ pred = model.predict(test_loader)
 y_pred = np.argmax(pred, axis=1)
 y_true = test_loader.classes
 
-print(classification_report(y_true, y_pred)）
+print(classification_report(y_true, y_pred))
 cm = confusion_matrix(y_true, y_pred)
 plt.imshow(cm, cmap='Blues')
 plt.title("Confusion Matrix")
