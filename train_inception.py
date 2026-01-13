@@ -65,11 +65,12 @@ test_loader = test_gen.flow_from_dataframe(
     class_mode='categorical',
     batch_size=batch_size,
     shuffle=False
+)
 base_model = InceptionV3(
     weights='imagenet',
     include_top=False,
     input_shape=(224,224,3)
-))
+)
 
 base_model.trainable = False
 
